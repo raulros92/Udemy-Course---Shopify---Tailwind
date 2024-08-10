@@ -10,9 +10,14 @@
     {{ content_for_header }}
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
-    {{ 'application.js' | asset_url | script_tag }}
+    {{ 'styles.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'application.js' | asset_url }}" defer></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+
   </head>
-  <body class ="bg-red-900 text-xl">
+  <body>
+    {% section 'header' %}
     <main role="main">
       {{ content_for_layout }}
     </main>
