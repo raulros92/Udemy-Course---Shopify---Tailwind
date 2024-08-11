@@ -1,0 +1,23 @@
+// { ESTRUCTURE OF A TEMPLATE
+//   "name": "Template 404",
+//   "layout": "custom_theme",
+//   customHTMLTag/section.custom-divTag.custom-Attribute=value
+//   "wrapper": "div#404_template.custom-class[custom-attribute=hello]",
+//   Object: sectionID (alphanumerical characters) -> another object: type - value = sections inside sections folder.
+//   "sections": {
+//     "template-404": {
+//       "type": "example-404"
+//     }
+//   },
+//   "order": ["template-404"]
+// }
+
+{
+  "name": "Template 404",
+  "sections": {
+    "template": {
+      "type": "template-404"
+    }
+  },
+  "order": ["template"]
+}
