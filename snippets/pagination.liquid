@@ -1,0 +1,40 @@
+{% comment %} 
+{% if paginate.pages > 1 %}
+{{ paginate | default_pagination }}
+{% endcomment %}
+
+{% comment %} 
+Two ways if you want paginate numbers:
+    - 1 Create/Use the | default_pagination filter. (Easy but you cannot fully customize it)
+
+{% if pagination.pages > 1 %}
+    <nav role="navigation" class="flex justify-center my-8">
+        {{ pagination | default_pagination }}
+    </nav>
+{% endif %}
+
+
+    - 2 Manually iterate through the {{paginate.parts}} (Difficult but you can customize it)
+{% endcomment %}
+
+{% if pagination.pages > 1 %}
+    <nav role="navigation" class="flex justify-center my-8">
+        {% if pagination.previous %}
+            <a href="{{ pagination.previous.url }}" class="border border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 mx-1 rounded-sm font-medium">{{ pagination.previous.title }}</a>
+        {% endif %}
+        {% comment %} The parts is an array that represent the links of the pagination (basically, the pages) {% endcomment %}
+        {% for part in pagination.parts %}
+            {% if part.is_link %}
+                <a href="{{ part.url }}" class="border border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 mx-1 rounded-sm font-medium">{{ part.title }}</a>
+            {% else %}
+                <span class="border border-gray-600 text-white bg-gray-600 px-8 py-3 mx-1 rounded-sm font-medium">{{ part.title }}</span> 
+            {% endif %}
+        {% endfor %}
+
+        {% if pagination.next %}
+            <a href="{{ pagination.next.url }}" class="border border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 mx-1 rounded-sm font-medium">{{ pagination.next.title }}</a>
+        {% endif %}
+
+    </nav>
+{% endif %} 
+
