@@ -7,5 +7,5 @@
       "type": "contact-form"
     }
   },
-  "order": ["templace", "contact-form"]
+  "order": ["template", "contact-form"]
 }
