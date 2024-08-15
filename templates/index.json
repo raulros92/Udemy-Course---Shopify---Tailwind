@@ -3,9 +3,18 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "featured_collection": "all"
+        "title": "Featured Collection",
+        "featured_collection": "all",
+        "number_of_columns": 4,
+        "number_of_products_to_show": 8
+      }
+    },
+    "contact_form_rXLRTg": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact Us"
       }
     }
   },
-  "order": ["featured-collection"]
+  "order": ["featured-collection", "contact_form_rXLRTg"]
 }
