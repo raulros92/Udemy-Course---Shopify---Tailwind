@@ -41,11 +41,11 @@
     </div>
 
     <div class="md:hidden">
-      <div class="swiper h-94">
+      <div class="swiper">
         <div class="swiper-wrapper">
           {% for media in product.media %}
             <div class="div swiper-slide">
-              <div class="h-80 overflow-hidden p-2">
+              <div class="h-[100vw] overflow-hidden p-2">
                 {% render 'product-media'
                   , media: media %}
               </div>
@@ -227,8 +227,10 @@
     customElements.define('variant-selector', VariantSelector);
 </script>
 
-<script defer>
-    const swiper = new Swiper('.swiper', {
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    try {
+      const swiper = new Swiper('.swiper', {
         // Optional parameters
         direction: 'horizontal',
         loop: true,
@@ -238,10 +240,14 @@
         },
         // Navigation arrows
         navigation: {
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next',
         }
-    })
+      })
+    } catch (e) {
+      console.log("SwiperJS is not defined");
+    }
+  });
 </script>
 
 {% schema %}
