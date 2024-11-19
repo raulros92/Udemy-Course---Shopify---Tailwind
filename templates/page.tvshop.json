@@ -10,11 +10,9 @@
 {
   "sections": {
     "template": {
-      "type": "template-customer-addresses",
+      "type": "template-page-tvshop",
       "settings": {}
     }
   },
-  "order": [
-    "template"
-  ]
+  "order": ["template"]
 }
