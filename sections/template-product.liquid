@@ -64,10 +64,7 @@
         , id: 'product-form'
         , novalidate: 'novalidate' %}
 
-        <input
-          type="hidden"
-          name="id"
-          value="{{ selected_variant.id }}">
+
 
         {% for block in section.blocks %}
           {% case block.type %}
