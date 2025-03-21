@@ -163,7 +163,7 @@
   class VariantSelector extends HTMLElement {
     constructor() {
       super();
-      this.addEventListener("change", onVariantChange())
+      this.addEventListener("change", this.onVariantChange())
     }
 
     onVariantChange() {
