@@ -171,10 +171,12 @@
     }
 
     getSelectedOptions() {
-      this.options = Array.from(this.querySelectorAll('select'), function (select) {
-        return select.value;
-        console.log(this.options);
-      })
+      // Usamos arrow function para mantener el contexto de 'this'
+      this.options = Array.from(
+        this.querySelectorAll('select'), 
+        (select) => select.value
+      );
+      console.log(this.options)
     }
   }
 
