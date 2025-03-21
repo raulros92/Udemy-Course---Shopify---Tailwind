@@ -160,10 +160,14 @@
 
 <script>
 
-  class VariantSelector extends HTMLElements {
+  class VariantSelector extends HTMLElement {
     constructor() {
       super();
-      this.
+      this.addEventListener("change", onVariantChange())
+    }
+
+    onVariantChange() {
+      console.log(I have change the variant selector)
     }
   }
 
