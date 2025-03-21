@@ -192,6 +192,11 @@
       })
       console.log(this.currentVariant);
     }
+
+    updateURL() {
+      if(!this.currentVariant) return;
+    }
+    
   }
 
   customElements.define("variant-selector", VariantSelector);
