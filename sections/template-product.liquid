@@ -172,6 +172,7 @@
       if (this.currentVariant) {
         this.updateURL();
         this.updateFormID();
+        this.updatePrice();
       };
       
     }
@@ -206,6 +207,10 @@
     updateFormID() {
       const form_input = document.getElementById("product-form").querySelector('input[name="id"]');
       form_input.value = this.currentVariant.id;
+    }
+
+    updatePrice() {
+      
     }
     
   }
