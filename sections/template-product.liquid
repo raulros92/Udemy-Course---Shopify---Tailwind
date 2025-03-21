@@ -185,9 +185,9 @@
 
     getSelectedVariant() {
       this.currentVariant = getVariantJSON().find((variant) => {
-        const findings = variant.options.map((option, index) => {
+        const findings = !variant.options.map((option, index) => {
           return this.options[index] === option;
-        })
+        }).includes(false)
       })
     }
     
