@@ -211,6 +211,7 @@
 
     updatePrice() {
       fetch(`${this.dataset.url}?variant?${this.currentVariant.id}&section_id=${this.dataset.section}`);
+      then((response) => response.text);
     }
     
   }
