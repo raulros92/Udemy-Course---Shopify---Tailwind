@@ -178,7 +178,7 @@
     }
 
     getVariantJSON() {
-      this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]'))
+      this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
     }
   }
 
