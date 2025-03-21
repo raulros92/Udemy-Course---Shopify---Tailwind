@@ -167,7 +167,8 @@
     }
 
     onVariantChange() {
-      this.getSelectedOptions()
+      this.getSelectedOptions();
+      this.getSelectedVariant();
     }
 
     getSelectedOptions() {
@@ -181,6 +182,11 @@
       this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
       return this.variantData;
     }
+
+    getSelectedVariant() {
+      
+    }
+    
   }
 
   customElements.define("variant-selector", VariantSelector);
