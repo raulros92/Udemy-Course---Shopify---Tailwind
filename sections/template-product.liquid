@@ -169,6 +169,7 @@
     onVariantChange() {
       this.getSelectedOptions();
       this.getSelectedVariant();
+      if (this.currentVariant) updateUrl();
     }
 
     getSelectedOptions() {
