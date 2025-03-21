@@ -169,7 +169,11 @@
     onVariantChange() {
       this.getSelectedOptions();
       this.getSelectedVariant();
-      if (this.currentVariant) this.updateURL();
+      if (this.currentVariant) {
+        this.updateURL();
+        this.updateFormID();
+      };
+      
     }
 
     getSelectedOptions() {
