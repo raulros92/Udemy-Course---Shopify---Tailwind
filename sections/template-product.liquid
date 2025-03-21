@@ -184,7 +184,11 @@
     }
 
     getSelectedVariant() {
-      this.currentVariant = getVariantJSON();
+      this.currentVariant = getVariantJSON().find((variant) => {
+        const findings = variant.options.map((option, index) => {
+          return this.options[index] === option;
+        })
+      })
     }
     
   }
