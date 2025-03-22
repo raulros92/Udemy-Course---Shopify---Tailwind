@@ -190,14 +190,12 @@
     }
 
     getSelectedVariant() {
-      this.currentVariant = this.getVariantJSON().find((variant) => {
-        const findings = !variant.options.map((option, index) => {
-          return this.options[index] === option;
-        }).includes(false);
-        if (findings) return variant;
-      })
+      this.currentVariant = this.getVariantJSON().find(variant =>
+        variant.options.every((option, index) => this.options[index] === option)
+      );
       console.log(this.currentVariant);
     }
+
 
     updateURL() {
       if(!this.currentVariant) return;
