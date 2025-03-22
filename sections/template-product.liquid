@@ -209,17 +209,15 @@
       form_input.value = this.currentVariant.id;
     }
 
-    updatePrice() {
-      fetch(`${this.dataset.url}?variant=${this.currentVariant.id}&section_id=${this.dataset.section}`)
-      .then((response) => response.text())
-      .then((responseText) => {
-        const id = `price-${this.dataset.section}`
-        const html = new DOMParser().parseFromString(responseText, 'text/html');
-        const oldPrice = document.getElementById(id);
-        const newPrice = html.getElementById(id);
-        if (oldPrice && newPrice) oldPrice.innerHTML = newPrice.innerHTML;
-      });
-    }
+updatePrice() {
+  fetch(`${this.dataset.url}?variant=${this.currentVariant.id}&section_id=${this.dataset.section}&json=true`)
+    .then((response) => response.json())  // Recibimos JSON en vez de texto
+    .then((data) => {
+      const oldPrice = document.getElementById(`price-${this.dataset.section}`);
+      if (oldPrice) oldPrice.innerHTML = data.newPrice; // Directamente insertamos el nuevo precio
+    });
+}
+
     
   }
 
