@@ -213,7 +213,10 @@
       fetch(`${this.dataset.url}?variant?${this.currentVariant.id}&section_id=${this.dataset.section}`);
       .then((response) => response.text());
       .then(responseText) => {
+        const id = `price-${dataset.section}`
         const html = new DOMParser().parseFromString(responseText, 'text/html');
+        const oldPirce = document.getElementById('id');
+        const newPrice = html.getElementById('id');
       });
     }
     
